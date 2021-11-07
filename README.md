@@ -1,39 +1,40 @@
-# Фильтр желтушных новостей
+# Jaundiced news filter
 
-[TODO. Опишите проект, схему работы]
+So far only one news site is supported - [ИНОСМИ.РУ](https://inosmi.ru/). For it, a special adapter has been developed that can highlight the text of the article against the background of the rest of the HTML markup. Other news sites will require new adapters, all of which will be in the `adapters` directory. The code for the INOSMI.RU website is also placed there: `adapters / inosmi_ru.py`.
 
-Пока поддерживается только один новостной сайт - [ИНОСМИ.РУ](https://inosmi.ru/). Для него разработан специальный адаптер, умеющий выделять текст статьи на фоне остальной HTML разметки. Для других новостных сайтов потребуются новые адаптеры, все они будут находиться в каталоге `adapters`. Туда же помещен код для сайта ИНОСМИ.РУ: `adapters/inosmi_ru.py`.
+In the future, you can create a universal adapter suitable for all sites, but its development will be difficult and will require additional time and effort.
 
-В перспективе можно создать универсальный адаптер, подходящий для всех сайтов, но его разработка будет сложной и потребует дополнительных времени и сил.
+# How to install
 
-# Как установить
+You need Python 3.7 or later. It is recommended to create a virtual environment to install packages.
 
-Вам понадобится Python версии 3.7 или старше. Для установки пакетов рекомендуется создать виртуальное окружение.
-
-Первым шагом установите пакеты:
+The first step is to install the packages:
 
 ```python3
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
-# Как запустить
+# How to run
 
 ```python3
-python main.py
+python3 server.py
 ```
 
-# Как запустить тесты
+# How to run tests
 
-Для тестирования используется [pytest](https://docs.pytest.org/en/latest/), тестами покрыты фрагменты кода сложные в отладке: text_tools.py и адаптеры. Команды для запуска тестов:
+For testing used [pytest](https://docs.pytest.org/en/latest/),
+Tests cover code fragments that are difficult to debug: text_tools.py and adapters.
+Commands for running tests:
 
 ```
 python -m pytest adapters/inosmi_ru.py
 ```
 
 ```
-python -m pytest text_tools.py
+python -m pytest tests.py
 ```
 
-# Цели проекта
+# Objectives of the project
 
-Код написан в учебных целях. Это урок из курса по веб-разработке — [Девман](https://dvmn.org).
+The code is written for educational purposes.
+This is a lesson from the course on web development — [Девман](https://dvmn.org).
